@@ -1,15 +1,21 @@
-import Link from 'next/link'
-import Layout from '../components/Layout'
+import React, { FC } from "react";
+import { Typography } from "@material-ui/core";
 
-const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <h1>Hello Next.js 👋</h1>
-    <p>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-    </p>
-  </Layout>
-)
+import { BaseLayout } from "src/layouts";
 
-export default IndexPage
+import { Link, ProTip, Copyright } from "src/components";
+
+const IndexPage: FC = () => (
+  <BaseLayout>
+    <Typography variant="h4" component="h1" gutterBottom>
+      Next.js v5-alpha with TypeScript example
+    </Typography>
+    <Link href="/about" color="secondary">
+      Go to the about page
+    </Link>
+    <ProTip />
+    <Copyright />
+  </BaseLayout>
+);
+
+export default IndexPage;
