@@ -6,7 +6,7 @@ import { BaseLayout } from "src/layouts";
 import { Link, ProTip, Copyright } from "src/components";
 
 const IndexPage: FC = () => (
-  <BaseLayout>
+  <BaseLayout title="Home">
     <Typography variant="h4" component="h1" gutterBottom>
       Next.js v5-alpha with TypeScript example
     </Typography>

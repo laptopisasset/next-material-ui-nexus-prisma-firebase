@@ -1,8 +1,8 @@
 import React, { FC } from "react";
-import Head from "next/head";
+
 import { AppProps } from "next/app";
 import { ThemeProvider, CssBaseline } from "@material-ui/core";
-import { darkTheme as theme } from "../theme";
+import { darkTheme as theme } from "src/theme";
 
 const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
   React.useEffect(() => {
@@ -15,13 +15,6 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
 
   return (
     <React.Fragment>
-      <Head>
-        <title>Example next </title>
-        <meta
-          name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width"
-        />
-      </Head>
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />

@@ -6,7 +6,7 @@ import { Copyright, Link, ProTip } from "src/components";
 import { Typography, Button } from "@material-ui/core";
 
 const AboutPage: FC = () => (
-  <BaseLayout>
+  <BaseLayout title="About">
     <Typography variant="h4" component="h1" gutterBottom>
       Next.js example
     </Typography>
