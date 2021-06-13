@@ -1,16 +1,15 @@
-import Link from 'next/link'
-import Layout from '../components/Layout'
+import React, { FC } from "react";
 
-const AboutPage = () => (
-  <Layout title="About | Next.js + TypeScript Example">
-    <h1>About</h1>
-    <p>This is the about page</p>
-    <p>
-      <Link href="/">
-        <a>Go home</a>
-      </Link>
-    </p>
-  </Layout>
-)
+import { BaseLayout } from "src/layouts";
 
-export default AboutPage
+import { Typography, Button } from "@material-ui/core";
+
+const AboutPage: FC = () => (
+  <BaseLayout>
+    <Typography variant="h4" component="h1" gutterBottom>
+      Next.js ewxample
+    </Typography>
+  </BaseLayout>
+);
+
+export default AboutPage;
