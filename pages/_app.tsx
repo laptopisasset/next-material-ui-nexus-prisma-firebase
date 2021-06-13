@@ -1,8 +1,7 @@
 import React, { FC } from "react";
 import Head from "next/head";
 import { AppProps } from "next/app";
-import { ThemeProvider } from "@material-ui/core";
-import CssBaseline from "@material-ui/core/CssBaseline";
+import { ThemeProvider, CssBaseline } from "@material-ui/core";
 import { darkTheme as theme } from "../theme";
 
 const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
