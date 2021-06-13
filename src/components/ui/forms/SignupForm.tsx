@@ -1,6 +1,8 @@
 import React from "react";
 import { Formik, Form } from "formik";
 import { Paper, makeStyles, Grid, Typography, Button } from "@material-ui/core";
+import * as Yup from "yup";
+
 import { TextField } from "./fields";
 import DividerWithText from "../DividerWithText";
 
@@ -20,6 +22,18 @@ export const SignupForm = () => {
         password: "",
         confirmPassword: "",
       }}
+      validationSchema={Yup.object().shape({
+        email: Yup.string()
+          .email("Not a valid email")
+          .required("Email is required"),
+        password: Yup.string()
+          .required("Password is required")
+          .min(6, "Password should have a minimum length of 6 characters")
+          .max(10, "Password should have a maximum length of 10 characters"),
+        confirmPassword: Yup.string()
+          .oneOf([Yup.ref("password"), null], "Passwords must match")
+          .required("Confirm Password is required"),
+      })}
       onSubmit={console.log}
     >
       <Paper variant="outlined" classes={{ root: classes.paper }}>

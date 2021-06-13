@@ -13,7 +13,7 @@ export const TextField: FC<
       {...field}
       {...props}
       variant="outlined"
-      error={Boolean(meta.touched && meta.error)}
+      error={Boolean(meta.error)}
       helperText={meta.error}
     />
   );
