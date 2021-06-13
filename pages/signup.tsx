@@ -2,6 +2,14 @@ import React, { FC } from "react";
 
 import { SigninorSignUpLayout } from "src/layouts";
 
-export const SignUpPage: FC = () => {
-  return <SigninorSignUpLayout></SigninorSignUpLayout>;
+import { SignupForm } from "src/components/ui/forms";
+
+const SignUpPage: FC = () => {
+  return (
+    <SigninorSignUpLayout>
+      <SignupForm />
+    </SigninorSignUpLayout>
+  );
 };
+
+export default SignUpPage;

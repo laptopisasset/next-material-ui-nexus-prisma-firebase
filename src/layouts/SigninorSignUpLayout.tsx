@@ -5,6 +5,10 @@ import { Container, makeStyles } from "@material-ui/core";
 const useStyles = makeStyles(() => ({
   singUporSignInContainer: {
     minHeight: "100vh",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
   },
 }));
 

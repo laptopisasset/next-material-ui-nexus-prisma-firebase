@@ -1,10 +1,10 @@
 import React, { FC } from "react";
-import { useField, FieldProps } from "formik";
+import { useField } from "formik";
 
 import { TextField as MuiTextField, TextFieldProps } from "@material-ui/core";
 
 export const TextField: FC<
-  Omit<TextFieldProps, "variant" | "helperText" | "error"> & FieldProps
+  Omit<TextFieldProps, "variant" | "helperText" | "error">
 > = (props) => {
   const [field, meta] = useField(props.name);
 
