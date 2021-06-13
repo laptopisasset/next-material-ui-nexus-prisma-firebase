@@ -1,6 +1,16 @@
-import React from "react";
+import React, { FC, useState, MouseEventHandler } from "react";
 import { Formik, Form } from "formik";
-import { Paper, makeStyles, Grid, Typography, Button } from "@material-ui/core";
+import {
+  Paper,
+  makeStyles,
+  Grid,
+  Typography,
+  Button,
+  InputAdornment,
+  IconButton,
+} from "@material-ui/core";
+import { Visibility, VisibilityOff } from "@material-ui/icons";
+
 import * as Yup from "yup";
 
 import { TextField } from "./fields";
@@ -13,8 +23,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const SignupForm = () => {
+export const SignupForm: FC = () => {
   const classes = useStyles();
+
+  const [visibility, setVisibility] = useState(false);
+
+  const handleClickShowPassword: MouseEventHandler = (e) => {
+    e.preventDefault();
+    setVisibility((prev) => !prev);
+  };
+
   return (
     <Formik
       initialValues={{
@@ -34,7 +52,7 @@ export const SignupForm = () => {
           .oneOf([Yup.ref("password"), null], "Passwords must match")
           .required("Confirm Password is required"),
       })}
-      onSubmit={console.log}
+      onSubmit={(values) => console.log(values)}
     >
       <Paper variant="outlined" classes={{ root: classes.paper }}>
         <Form>
@@ -57,9 +75,22 @@ export const SignupForm = () => {
               <TextField
                 name="password"
                 fullWidth
-                type="password"
+                type={visibility ? "text" : "password"}
                 label="Password"
                 required
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={handleClickShowPassword}
+                        // onMouseDown={handleMouseDownPassword}
+                      >
+                        {visibility ? <Visibility /> : <VisibilityOff />}
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                }}
               />
             </Grid>
             <Grid item>
