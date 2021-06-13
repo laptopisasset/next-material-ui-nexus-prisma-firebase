@@ -30,3 +30,5 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
     </React.Fragment>
   );
 };
+
+export default MyApp;
