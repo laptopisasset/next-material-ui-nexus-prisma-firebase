@@ -16,7 +16,7 @@ import { THEMEVARAINT } from "src/constants";
 
 const useStyles = makeStyles(() => ({
   main: {
-    minHeight: "100vh",
+    minHeight: "100%",
   },
   linkandSettingsContanier: {
     marginLeft: "auto",
@@ -55,30 +55,24 @@ export const BaseLayout: FC<{ title: string }> = ({ children, title }) => {
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
       </Head>
-      <main className={classes.main}>
-        <Header>
-          <Typography variant="h3">Landing Page</Typography>
-          <Box className={classes.linkandSettingsContanier}>
-            {themeIcons[variant]}
-            <Button
-              variant="outlined"
-              component={Link}
-              noLinkStyle
-              href="/login"
-            >
-              Login
-            </Button>
-            <Button
-              variant="outlined"
-              component={Link}
-              noLinkStyle
-              href="/signup"
-            >
-              Signup
-            </Button>
-          </Box>
-        </Header>
-      </main>
+      <Header>
+        <Typography variant="h3">Landing Page</Typography>
+        <Box className={classes.linkandSettingsContanier}>
+          {themeIcons[variant]}
+          <Button variant="outlined" component={Link} noLinkStyle href="/login">
+            Login
+          </Button>
+          <Button
+            variant="outlined"
+            component={Link}
+            noLinkStyle
+            href="/signup"
+          >
+            Signup
+          </Button>
+        </Box>
+      </Header>
+      <main className={classes.main}>{children}</main>
     </>
   );
 };
