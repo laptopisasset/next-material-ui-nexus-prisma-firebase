@@ -2,7 +2,7 @@ import React, { FC } from "react";
 
 import { AppProps } from "next/app";
 import { ThemeProvider, CssBaseline } from "@material-ui/core";
-import { darkTheme as theme } from "src/theme";
+import { lightTheme as theme } from "src/theme";
 
 const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
   React.useEffect(() => {
